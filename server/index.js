@@ -16,3 +16,11 @@ mongoose.connect(process.env.MONGO)
 app.use('/api/user', userRoutes)
 app.use('/api/auth', authRoutes)
 
+app.use((err, req, res, next) => {
+  let statusCode = err.statusCode || 500
+  let message = err.message || 'internal serval error'
+  res.status(statusCode).json({
+    success: false, statusCode, message
+  })
+})
+
