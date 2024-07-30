@@ -1,7 +1,7 @@
 import { Button,  Navbar, TextInput } from 'flowbite-react';
 import { Link, useLocation,  } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { FaMoon,  } from 'react-icons/fa';
+import { FaMoon } from "react-icons/fa";
 
 export default function Header() {
   const path = useLocation().pathname;
@@ -31,15 +31,9 @@ export default function Header() {
         <AiOutlineSearch />
       </Button>
       <div className='flex gap-2 md:order-2'>
-        <Button
-          className='w-12 h-10 hidden sm:inline'
-          color='gray'
-          pill
-         
-        >
-           <FaMoon />
-        </Button>
-    
+        <button className='bg-gray-100 p-2 rounded-full'>
+         <FaMoon />
+        </button>
       
           <Link to='/sign-in'>
             <Button gradientDuoTone='purpleToBlue' outline>
